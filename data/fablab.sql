@@ -66,7 +66,6 @@ ALTER TABLE ONLY robot ALTER COLUMN id SET DEFAULT nextval('robot_id_seq'::regcl
 -- PostgreSQL database dump complete
 --
 
-
 CREATE TABLE public.concepteur
 (
     id integer NOT NULL DEFAULT nextval('concepteur_id_seq'::regclass),
@@ -74,6 +73,7 @@ CREATE TABLE public.concepteur
     surnom text COLLATE pg_catalog."default",
     specialite text COLLATE pg_catalog."default",
     courriel text COLLATE pg_catalog."default",
+    id_robot integer NOT NULL,
     CONSTRAINT concepteur_pkey PRIMARY KEY (id)
 )
 WITH (
