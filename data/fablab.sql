@@ -66,3 +66,35 @@ ALTER TABLE ONLY robot ALTER COLUMN id SET DEFAULT nextval('robot_id_seq'::regcl
 -- PostgreSQL database dump complete
 --
 
+
+CREATE TABLE public.concepteur
+(
+    id integer NOT NULL DEFAULT nextval('concepteur_id_seq'::regclass),
+    nom text COLLATE pg_catalog."default",
+    surnom text COLLATE pg_catalog."default",
+    specialite text COLLATE pg_catalog."default",
+    courriel text COLLATE pg_catalog."default",
+    CONSTRAINT concepteur_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.concepteur
+    OWNER to postgres;
+    
+    
+-- SEQUENCE: public.concepteur_id_seq
+
+-- DROP SEQUENCE public.concepteur_id_seq;
+
+CREATE SEQUENCE public.concepteur_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.concepteur_id_seq
+    OWNER TO postgres;
