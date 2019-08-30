@@ -3,6 +3,7 @@ package action;
 import java.util.ArrayList;
 import java.util.List;
 
+import donnee.ConcepteurDAO;
 import donnee.RobotDAO;
 import modele.Concepteur;
 import modele.Robot;
@@ -13,6 +14,7 @@ import vue.VueRobot;
 
 public class ControleurRobot {
 	
+	private ConcepteurDAO accesseurConcepteur =  new ConcepteurDAO();
 	private NavigateurDesVues navigateur;
 	private VueListeRobot vueListeRobot = null;
 	private VueRobot vueRobot = null;
@@ -109,12 +111,16 @@ public class ControleurRobot {
 		this.navigateur.naviguerVersVueEditerRobot();
 		
 		// Debut mockup - echafaud - stub
-		List<Concepteur> listeConcepteurs = new ArrayList<Concepteur>();
-		Concepteur toto = new Concepteur(); toto.setNom("Toto"); listeConcepteurs.add(toto);
-		Concepteur lulu = new Concepteur(); lulu.setNom("Lulu"); listeConcepteurs.add(lulu);
+		//List<Concepteur> listeConcepteurs = new ArrayList<Concepteur>();
+		//Concepteur toto = new Concepteur(); toto.setNom("Toto"); listeConcepteurs.add(toto);
+		//Concepteur lulu = new Concepteur(); lulu.setNom("Lulu"); listeConcepteurs.add(lulu);
 		// Fin mockup
 		
-		// TEST
+		// Test avec toujours robot 1
+		Robot robot1 = new Robot("");
+		robot1.setId(1);
+		List<Concepteur> listeConcepteurs = accesseurConcepteur.listerConcepteursParRobot(robot1);
+
 		this.vueEditerRobot.afficherListeConcepteurs(listeConcepteurs);
 	}
 	
