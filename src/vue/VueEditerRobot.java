@@ -25,12 +25,13 @@ public class VueEditerRobot extends Scene {
 	protected Button actionEnregistrerRobot = null;
 	
 	private int idRobot = 0;
+	private GridPane grilleConcepteurs = null;
 	
 	public VueEditerRobot()  {
 		super(new VBox(), 400, 400);
 		VBox panneau = (VBox) this.getRoot();
 		GridPane grilleRobot = new GridPane();
-				
+		this.grilleConcepteurs = new GridPane();
 		this.actionEnregistrerRobot = new Button("Enregistrer");
 		
 		this.actionEnregistrerRobot.setOnAction(new EventHandler<ActionEvent>() {
@@ -63,6 +64,7 @@ public class VueEditerRobot extends Scene {
 		panneau.getChildren().add(new Label("Editer un robot")); // Todo : créer un sous-type de Label ou Text pour les titres
 		panneau.getChildren().add(grilleRobot);
 		panneau.getChildren().add(this.actionEnregistrerRobot);
+		panneau.getChildren().add(grilleConcepteurs);
 	}
 	
 	public void afficherRobot(Robot robot)
@@ -91,7 +93,12 @@ public class VueEditerRobot extends Scene {
 	
 	public void afficherListeConcepteurs(List<Concepteur> listeConcepteurs)
 	{
+		this.grilleConcepteurs.add(new Label("test"), 0, 0);
 		
+		for(Concepteur concepteur : listeConcepteurs)
+		{
+			System.out.println(concepteur.getNom());
+		}
 	}
 
 }

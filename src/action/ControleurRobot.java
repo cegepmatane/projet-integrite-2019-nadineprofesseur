@@ -111,7 +111,7 @@ public class ControleurRobot {
 		// Debut mockup - echafaud - stub
 		List<Concepteur> listeConcepteurs = new ArrayList<Concepteur>();
 		Concepteur toto = new Concepteur(); toto.setNom("Toto"); listeConcepteurs.add(toto);
-		Concepteur lulu = new Concepteur(); toto.setNom("Lulu"); listeConcepteurs.add(lulu);
+		Concepteur lulu = new Concepteur(); lulu.setNom("Lulu"); listeConcepteurs.add(lulu);
 		// Fin mockup
 		
 		// TEST
