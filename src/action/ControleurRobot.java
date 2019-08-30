@@ -1,8 +1,10 @@
 package action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import donnee.RobotDAO;
+import modele.Concepteur;
 import modele.Robot;
 import vue.NavigateurDesVues;
 import vue.VueEditerRobot;
@@ -106,6 +108,14 @@ public class ControleurRobot {
 		this.vueEditerRobot.afficherRobot(this.robotDAO.rapporterRobot(idRobot));
 		this.navigateur.naviguerVersVueEditerRobot();
 		
+		// Debut mockup - echafaud - stub
+		List<Concepteur> listeConcepteurs = new ArrayList<Concepteur>();
+		Concepteur toto = new Concepteur(); toto.setNom("Toto"); listeConcepteurs.add(toto);
+		Concepteur lulu = new Concepteur(); toto.setNom("Lulu"); listeConcepteurs.add(lulu);
+		// Fin mockup
+		
+		// TEST
+		this.vueEditerRobot.afficherListeConcepteurs(listeConcepteurs);
 	}
 	
 	

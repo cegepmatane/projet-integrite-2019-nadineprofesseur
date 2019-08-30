@@ -1,5 +1,7 @@
 package vue;
 
+import java.util.List;
+
 import action.ControleurRobot;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import modele.Concepteur;
 import modele.Robot;
 
 public class VueEditerRobot extends Scene {
@@ -85,5 +88,10 @@ public class VueEditerRobot extends Scene {
 		this.controleur = controleur;
 	}
 	
+	
+	public void afficherListeConcepteurs(List<Concepteur> listeConcepteurs)
+	{
+		
+	}
 
 }
