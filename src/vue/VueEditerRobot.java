@@ -93,11 +93,13 @@ public class VueEditerRobot extends Scene {
 	
 	public void afficherListeConcepteurs(List<Concepteur> listeConcepteurs)
 	{
-		this.grilleConcepteurs.add(new Label("test"), 0, 0);
+		//this.grilleConcepteurs.add(new Label("test"), 0, 0);
 		
+		int rangee = 0;
 		for(Concepteur concepteur : listeConcepteurs)
 		{
-			System.out.println(concepteur.getNom());
+			//System.out.println(concepteur.getNom());
+			this.grilleConcepteurs.add(new Label(concepteur.getNom()), 0, rangee++);
 		}
 	}
 
