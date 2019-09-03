@@ -18,8 +18,10 @@ public class NavigateurDesVues extends Application{
 
 	private ControleurRobot controleur = null;
 	
+	static private NavigateurDesVues instance = null;
 	public NavigateurDesVues() 
 	{		
+		NavigateurDesVues.instance = this;
 		this.vueListeRobot = new VueListeRobot();
 		this.vueRobot = new VueRobot();
 		this.vueAjouterRobot = new VueAjouterRobot();
@@ -29,6 +31,11 @@ public class NavigateurDesVues extends Application{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	static public NavigateurDesVues getInstance()
+	{
+		return instance;
 	}
 
 	@Override
@@ -44,6 +51,7 @@ public class NavigateurDesVues extends Application{
 		this.vueRobot.setControleur(controleur);
 		this.vueAjouterRobot.setControleur(controleur);
 		this.vueEditerRobot.setControleur(controleur);
+		//this.vueAjouterConcepteur.setControleur(controleur);
 	}	
 	
 	public VueListeRobot getVueListeRobot() {
