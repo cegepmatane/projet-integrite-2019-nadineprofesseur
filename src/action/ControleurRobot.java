@@ -107,7 +107,8 @@ public class ControleurRobot {
 	{
 		System.out.println("ControleurRobot.notifierEditerRobot("+idRobot+")");
 		// savoir par la vue liste quel numero de robot a ete clique
-		this.vueEditerRobot.afficherRobot(this.robotDAO.rapporterRobot(idRobot));
+		Robot robot = this.robotDAO.rapporterRobot(idRobot);
+		this.vueEditerRobot.afficherRobot(robot);
 		this.navigateur.naviguerVersVueEditerRobot();
 		
 		// Debut mockup - echafaud - stub
@@ -117,9 +118,9 @@ public class ControleurRobot {
 		// Fin mockup
 		
 		// Test avec toujours robot 1
-		Robot robot1 = new Robot("");
-		robot1.setId(1);
-		List<Concepteur> listeConcepteurs = accesseurConcepteur.listerConcepteursParRobot(robot1);
+		//Robot robot1 = new Robot("");
+		//robot1.setId(1);
+		List<Concepteur> listeConcepteurs = accesseurConcepteur.listerConcepteursParRobot(robot);
 
 		this.vueEditerRobot.afficherListeConcepteurs(listeConcepteurs);
 	}
