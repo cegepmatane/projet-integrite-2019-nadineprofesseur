@@ -7,7 +7,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2"  fx:controller="action.ControleurRobot">
   <children>
     <Label layoutX="47.0" layoutY="31.0" style="-fx-text-fill:blue;&#10;-fx-font-family: &quot;Segoe UI Semibold&quot;;" text="Ajouter un concepteur">
       <font>
@@ -25,12 +25,12 @@
             </Label>
             <TextField id="champs-nom" prefWidth="200.0" />
             <Label font="$x1" prefWidth="57.0" text="Surnom" textFill="WHITE" />
-            <TextField id="champs-etoile" prefWidth="200.0" />
+            <TextField id="champs-surnom" prefWidth="200.0" />
             <Label font="$x1" text="Spécialité" textFill="WHITE" />
-            <TextField id="champs-masse" prefWidth="200.0" />
+            <TextField id="champs-specialite" prefWidth="200.0" />
             <Label font="$x1" text="Courriel" textFill="WHITE" />
-            <TextField id="champs-rayon" prefWidth="200.0" />
-            <Button mnemonicParsing="false" prefWidth="174.0" style="-fx-background-color: blue; &#10;-fx-text-fill:white;&#10;-fx-font-family: &quot;Segoe UI Semibold&quot;;" text="Enregistrer" />
+            <TextField id="champs-courriel" prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#notifierEnregistrerAjoutConcepteur" prefWidth="174.0" style="-fx-background-color: blue; &#10;-fx-text-fill:white;&#10;-fx-font-family: &quot;Segoe UI Semibold&quot;;" text="Enregistrer" />
           </children>
         </VBox>
       </children>

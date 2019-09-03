@@ -5,6 +5,7 @@ import java.util.List;
 
 import donnee.ConcepteurDAO;
 import donnee.RobotDAO;
+import javafx.event.ActionEvent;
 import modele.Concepteur;
 import modele.Robot;
 import vue.NavigateurDesVues;
@@ -14,7 +15,7 @@ import vue.VueRobot;
 
 public class ControleurRobot {
 	
-	private ConcepteurDAO accesseurConcepteur =  new ConcepteurDAO();
+	private ConcepteurDAO accesseurConcepteur =  new ConcepteurDAO(); // DAO devienne un singleton
 	private NavigateurDesVues navigateur;
 	private VueListeRobot vueListeRobot = null;
 	private VueRobot vueRobot = null;
@@ -22,10 +23,11 @@ public class ControleurRobot {
 	private VueEditerRobot vueEditerRobot = null;
 	private RobotDAO robotDAO = null;
 	
-	private ControleurRobot()
+	public ControleurRobot() // le controleur ne peut plus etre utilise singleton puisque fxml loader instancie
 	{
 		System.out.println("Initialisation du controleur");	
 		this.robotDAO = new RobotDAO();
+		this.navigateur = NavigateurDesVues.getInstance();
 	}
 	
 	public void activerVues(NavigateurDesVues navigateur)
@@ -131,4 +133,10 @@ public class ControleurRobot {
 		this.navigateur.naviguerVersVueAjouterConcepteur();
 	}
 	
+	public void notifierEnregistrerAjoutConcepteur(ActionEvent evenement)
+	{
+		System.out.println("ControleurRobot.notifierEnregistrerAjoutConcepteur(ActionEvent evenement)");
+		Concepteur concepteur = this.navigateur.getVueAjouterConcepteur().demanderConcepteur();
+		System.out.println(concepteur.getNom());
+	}
 }
