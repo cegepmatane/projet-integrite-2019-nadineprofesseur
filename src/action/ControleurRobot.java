@@ -108,6 +108,7 @@ public class ControleurRobot {
 		System.out.println("ControleurRobot.notifierEditerRobot("+idRobot+")");
 		// savoir par la vue liste quel numero de robot a ete clique
 		Robot robot = this.robotDAO.rapporterRobot(idRobot);
+		System.out.println(robot.getId());
 		this.vueEditerRobot.afficherRobot(robot);
 		this.navigateur.naviguerVersVueEditerRobot();
 		

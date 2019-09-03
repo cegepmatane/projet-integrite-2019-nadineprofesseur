@@ -33,12 +33,16 @@ public class VueListeRobot extends Scene {
 		for(Robot robot : listeRobots)
 		{
 			Button actionEditerRobot = new Button("Editer");
+			actionEditerRobot.setUserData(robot.getId());
 			actionEditerRobot.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
-				public void handle(ActionEvent a) {
-					controleur.notifierNaviguerEditerRobot(robot.getId()); // TODO ameliorer ceci pour respecter architecture cible = pas de parametre dans les notifications au controleur
+				public void handle(ActionEvent e) {
+					//System.out.println("user data " + (int)((Button)e.getSource()).getUserData());
+					controleur.notifierNaviguerEditerRobot((int)((Button)e.getSource()).getUserData()); 
+					// TODO ameliorer ceci pour respecter architecture cible = pas de parametre dans les notifications au controleur
 				}});
 			numero++;
+			System.out.println("user data moment creation "+(int)actionEditerRobot.getUserData());
 			this.grilleRobots.add(new Label(robot.getNom()), 0, numero);
 			this.grilleRobots.add(new Label(robot.getTechnologie()), 1, numero);			
 			this.grilleRobots.add(actionEditerRobot, 2, numero);
