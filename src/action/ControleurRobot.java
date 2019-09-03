@@ -137,6 +137,9 @@ public class ControleurRobot {
 	{
 		System.out.println("ControleurRobot.notifierEnregistrerAjoutConcepteur(ActionEvent evenement)");
 		Concepteur concepteur = this.navigateur.getVueAjouterConcepteur().demanderConcepteur();
-		System.out.println(concepteur.getNom());
+		//System.out.println(concepteur.getNom());
+		
+		ConcepteurDAO concepteurDAO = new ConcepteurDAO();
+		concepteurDAO.ajouterConcepteur(concepteur);
 	}
 }

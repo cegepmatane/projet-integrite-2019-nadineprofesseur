@@ -81,4 +81,9 @@ public class ConcepteurDAO {
 		
 		return listeConcepteurs;
 	}
+	
+	public void ajouterConcepteur(Concepteur concepteur)
+	{
+		System.out.println("ConcepteurDAO.ajouterConcepteur(Concepteur concepteur)");
+	}
 }
