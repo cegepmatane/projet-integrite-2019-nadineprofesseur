@@ -45,15 +45,13 @@ public class ControleurRobot {
 		/// TEST ///
 		List<Robot> listeRobotsTest = robotDAO.listerRobots();
 		this.vueListeRobot.afficherListeRobot(listeRobotsTest); // Appel de ma fonction avant de la programmer (pour tester à mesure)
-		
-				
-		//this.navigateur.naviguerVersVueAjouterRobot();
-		
+		//this.navigateur.naviguerVersVueAjouterRobot();		
 		//this.vueEditerRobot.afficherListeDistinction(this.distinctionDAO.listerDistinctions());
+		//this.navigateur.naviguerVersVueAjouterConcepteur();
 
-		//this.navigateur.naviguerVersVueListeRobot();		// vrai code
+		// VRAI CODE
+		this.navigateur.naviguerVersVueListeRobot();		
 		
-		this.navigateur.naviguerVersVueAjouterConcepteur();
 
 	}
 	
@@ -128,6 +126,9 @@ public class ControleurRobot {
 
 		this.vueEditerRobot.afficherListeConcepteurs(listeConcepteurs);
 	}
-	
+	public void notifierNaviguerAjouterConcepteur()
+	{
+		this.navigateur.naviguerVersVueAjouterConcepteur();
+	}
 	
 }

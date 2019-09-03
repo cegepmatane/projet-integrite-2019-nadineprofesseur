@@ -23,6 +23,7 @@ public class VueEditerRobot extends Scene {
 	
 	private ControleurRobot controleur = null;
 	protected Button actionEnregistrerRobot = null;
+	protected Button actionAjouterConcepteur = null;
 	
 	private int idRobot = 0;
 	private GridPane grilleConcepteurs = null;
@@ -42,6 +43,14 @@ public class VueEditerRobot extends Scene {
 				controleur.notifierEnregistrerRobot();
 				
 			}});
+		
+		this.actionAjouterConcepteur = new Button("Ajouter un concepteur");
+		this.actionAjouterConcepteur.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent arg0) {
+				controleur.notifierNaviguerAjouterConcepteur();
+			}});
+
 		
 		// https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/GridPane.html
 		valeurNom = new TextField();
@@ -64,6 +73,7 @@ public class VueEditerRobot extends Scene {
 		panneau.getChildren().add(new Label("Editer un robot")); // Todo : créer un sous-type de Label ou Text pour les titres
 		panneau.getChildren().add(grilleRobot);
 		panneau.getChildren().add(this.actionEnregistrerRobot);
+		panneau.getChildren().add(this.actionAjouterConcepteur);
 		panneau.getChildren().add(grilleConcepteurs);
 	}
 	
