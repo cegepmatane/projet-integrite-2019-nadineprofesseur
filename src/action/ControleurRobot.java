@@ -46,12 +46,15 @@ public class ControleurRobot {
 		List<Robot> listeRobotsTest = robotDAO.listerRobots();
 		this.vueListeRobot.afficherListeRobot(listeRobotsTest); // Appel de ma fonction avant de la programmer (pour tester à mesure)
 		
-		this.navigateur.naviguerVersVueListeRobot();		
 				
 		//this.navigateur.naviguerVersVueAjouterRobot();
 		
 		//this.vueEditerRobot.afficherListeDistinction(this.distinctionDAO.listerDistinctions());
+
+		//this.navigateur.naviguerVersVueListeRobot();		// vrai code
 		
+		this.navigateur.naviguerVersVueAjouterConcepteur();
+
 	}
 	
 	// SINGLETON DEBUT

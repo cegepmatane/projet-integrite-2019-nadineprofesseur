@@ -1,5 +1,7 @@
 package vue;
 
+import java.io.IOException;
+
 import action.ControleurRobot;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -12,7 +14,8 @@ public class NavigateurDesVues extends Application{
 	private VueRobot vueRobot = null;
 	private VueAjouterRobot vueAjouterRobot = null;
 	private VueEditerRobot vueEditerRobot = null;
-	
+	private VueAjouterConcepteur vueAjouterConcepteur = null;
+
 	private ControleurRobot controleur = null;
 	
 	public NavigateurDesVues() 
@@ -21,6 +24,11 @@ public class NavigateurDesVues extends Application{
 		this.vueRobot = new VueRobot();
 		this.vueAjouterRobot = new VueAjouterRobot();
 		this.vueEditerRobot = new VueEditerRobot();
+		try {
+			this.vueAjouterConcepteur = new VueAjouterConcepteur();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -41,40 +49,44 @@ public class NavigateurDesVues extends Application{
 	public VueListeRobot getVueListeRobot() {
 		return vueListeRobot;
 	}
-
 	public VueRobot getVueRobot() {
 		return vueRobot;
 	}
-	
 	public VueAjouterRobot getVueAjouterRobot() {
 		return vueAjouterRobot;
 	}
-
 	public VueEditerRobot getVueEditerRobot(){
 		return this.vueEditerRobot;
 	}
+	public VueAjouterConcepteur getVueAjouterConcepteur() {
+		return vueAjouterConcepteur;
+	}
+	
+	
+	
 	
 	public void naviguerVersVueRobot() {
 		stade.setScene(this.vueRobot);
 		stade.show();
 	}
-	
 	public void naviguerVersVueListeRobot()
 	{
 		stade.setScene(this.vueListeRobot);
 		stade.show();		
 	}
-	
 	public void naviguerVersVueAjouterRobot()
 	{
 		stade.setScene(this.vueAjouterRobot);
 		stade.show();				
 	}
-
 	public void naviguerVersVueEditerRobot()
 	{
 		stade.setScene(this.vueEditerRobot);
 		stade.show();				
 	}
-	
+	public void naviguerVersVueAjouterConcepteur()
+	{
+		stade.setScene(this.vueAjouterConcepteur);
+		stade.show();				
+	}
 }
