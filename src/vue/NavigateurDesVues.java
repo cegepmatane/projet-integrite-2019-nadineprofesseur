@@ -15,6 +15,7 @@ public class NavigateurDesVues extends Application{
 	private VueAjouterRobot vueAjouterRobot = null;
 	private VueEditerRobot vueEditerRobot = null;
 	private VueAjouterConcepteur vueAjouterConcepteur = null;
+	private VueEditerConcepteur vueEditerConcepteur = null;
 
 	private ControleurRobot controleur = null;
 	
@@ -31,6 +32,7 @@ public class NavigateurDesVues extends Application{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		this.vueEditerConcepteur = new VueEditerConcepteur();
 	}
 	
 	static public NavigateurDesVues getInstance()
@@ -55,21 +57,23 @@ public class NavigateurDesVues extends Application{
 	}	
 	
 	public VueListeRobot getVueListeRobot() {
-		return vueListeRobot;
+		return this.vueListeRobot;
 	}
 	public VueRobot getVueRobot() {
-		return vueRobot;
+		return this.vueRobot;
 	}
 	public VueAjouterRobot getVueAjouterRobot() {
-		return vueAjouterRobot;
+		return this.vueAjouterRobot;
 	}
 	public VueEditerRobot getVueEditerRobot(){
 		return this.vueEditerRobot;
 	}
 	public VueAjouterConcepteur getVueAjouterConcepteur() {
-		return vueAjouterConcepteur;
+		return this.vueAjouterConcepteur;
 	}
-	
+	public VueEditerConcepteur getVueEditerConcepteur() {
+		return this.vueEditerConcepteur;
+	}
 	
 	
 	
@@ -95,6 +99,11 @@ public class NavigateurDesVues extends Application{
 	public void naviguerVersVueAjouterConcepteur()
 	{
 		stade.setScene(this.vueAjouterConcepteur);
+		stade.show();				
+	}
+	public void naviguerVersVueEditerConcepteur()
+	{
+		stade.setScene(this.vueEditerConcepteur);
 		stade.show();				
 	}
 }

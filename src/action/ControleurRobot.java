@@ -52,7 +52,10 @@ public class ControleurRobot {
 		//this.navigateur.naviguerVersVueAjouterConcepteur();
 
 		// VRAI CODE
-		this.navigateur.naviguerVersVueListeRobot();		
+		this.navigateur.naviguerVersVueListeRobot();	
+		
+		/// TEST
+		this.navigateur.naviguerVersVueEditerConcepteur();
 		
 
 	}
@@ -147,7 +150,8 @@ public class ControleurRobot {
 		
 		Robot robot = new Robot("");
 		robot.setId(idRobotContextuel);
-		this.navigateur.getVueEditerRobot().afficherListeConcepteurs(accesseurConcepteur.listerConcepteursParRobot(robot)); // optimiser
-		this.navigateur.naviguerVersVueEditerRobot();
+		
+		NavigateurDesVues.getInstance().getVueEditerRobot().afficherListeConcepteurs(accesseurConcepteur.listerConcepteursParRobot(robot)); // optimiser
+		NavigateurDesVues.getInstance().naviguerVersVueEditerRobot();
 	}
 }
