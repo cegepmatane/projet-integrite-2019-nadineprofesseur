@@ -37,7 +37,7 @@ public class VueListeRobot extends Scene {
 			actionEditerRobot.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
 				public void handle(ActionEvent e) {
-					//System.out.println("user data " + (int)((Button)e.getSource()).getUserData());
+					System.out.println("user data " + (int)((Button)e.getSource()).getUserData());
 					controleur.notifierNaviguerEditerRobot((int)((Button)e.getSource()).getUserData()); 
 					// TODO ameliorer ceci pour respecter architecture cible = pas de parametre dans les notifications au controleur
 				}});

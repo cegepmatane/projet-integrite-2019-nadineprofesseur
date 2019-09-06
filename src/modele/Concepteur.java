@@ -6,7 +6,9 @@ public class Concepteur {
 	protected String surnom;
 	protected String specialite;
 	protected String courriel;
+	protected int idRobot;
 	
+
 	public String getNom() {
 		return nom;
 	}
@@ -31,5 +33,10 @@ public class Concepteur {
 	public void setCourriel(String courriel) {
 		this.courriel = courriel;
 	}
-
+	public int getIdRobot() {
+		return idRobot;
+	}
+	public void setIdRobot(int idRobot) {
+		this.idRobot = idRobot;
+	}
 }
