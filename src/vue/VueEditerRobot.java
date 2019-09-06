@@ -108,8 +108,17 @@ public class VueEditerRobot extends Scene {
 		int rangee = 0;
 		for(Concepteur concepteur : listeConcepteurs)
 		{
+			Button actionEditerConcepteur = new Button("Editer");
+			actionEditerConcepteur.setUserData(0);
+			actionEditerConcepteur.setOnAction(evenement -> {
+				System.out.println("actionEditerConcepteur.evenement");
+				int id = (int)((Button)evenement.getSource()).getUserData();	
+				
+			});
+			
 			//System.out.println(concepteur.getNom());
-			this.grilleConcepteurs.add(new Label(concepteur.getNom()), 0, rangee++);
+			this.grilleConcepteurs.add(new Label(concepteur.getNom()), 0, rangee);
+			this.grilleConcepteurs.add(actionEditerConcepteur, 1, rangee++);
 		}
 	}
 
