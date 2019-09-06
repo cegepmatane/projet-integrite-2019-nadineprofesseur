@@ -106,8 +106,10 @@ public class ControleurRobot {
 		this.navigateur.naviguerVersVueAjouterRobot();
 	}
 	
+	static private int idRobotContextuel = 0;
 	public void notifierNaviguerEditerRobot(int idRobot)
 	{
+		idRobotContextuel = idRobot;
 		System.out.println("ControleurRobot.notifierEditerRobot("+idRobot+")");
 		// savoir par la vue liste quel numero de robot a ete clique
 		Robot robot = this.robotDAO.rapporterRobot(idRobot);
@@ -137,9 +139,15 @@ public class ControleurRobot {
 	{
 		System.out.println("ControleurRobot.notifierEnregistrerAjoutConcepteur(ActionEvent evenement)");
 		Concepteur concepteur = this.navigateur.getVueAjouterConcepteur().demanderConcepteur();
+		concepteur.setIdRobot(idRobotContextuel);
 		System.out.println(concepteur.getNom());
 		
 		ConcepteurDAO concepteurDAO = new ConcepteurDAO();
 		concepteurDAO.ajouterConcepteur(concepteur);
+		
+		Robot robot = new Robot("");
+		robot.setId(idRobotContextuel);
+		this.navigateur.getVueEditerRobot().afficherListeConcepteurs(accesseurConcepteur.listerConcepteursParRobot(robot)); // optimiser
+		this.navigateur.naviguerVersVueEditerRobot();
 	}
 }
