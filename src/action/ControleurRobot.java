@@ -161,4 +161,17 @@ public class ControleurRobot {
 		NavigateurDesVues.getInstance().getVueEditerConcepteur().afficherConcepteur(concepteur);
 		NavigateurDesVues.getInstance().naviguerVersVueEditerConcepteur();
 	}
+	
+	public void notifierEnregistrerConcepteur()
+	{
+		System.out.println("ControleurRobot.notifierEnregistrerConcepteur()");
+		ConcepteurDAO concepteurDAO = new ConcepteurDAO(); // todo concentrer
+		Concepteur concepteur = NavigateurDesVues.getInstance().getVueEditerConcepteur().demanderConcepteur();
+		//concepteurDAO.modifierConcepteur(concepteur)
+		// modifier affichage du concepteur modifie - rafraichir la liste
+		Robot robot = new Robot("");
+		robot.setId(concepteur.getIdRobot());
+		NavigateurDesVues.getInstance().getVueEditerRobot().afficherListeConcepteurs(concepteurDAO.listerConcepteursParRobot(robot));
+		NavigateurDesVues.getInstance().naviguerVersVueEditerRobot();
+	}
 }

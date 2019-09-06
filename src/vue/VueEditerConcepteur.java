@@ -23,8 +23,6 @@ public class VueEditerConcepteur extends Scene {
 	
 	private ControleurRobot controleur = null;
 	protected Button actionEnregistrerConcepteur = null;
-	
-	private int idConcepteur = 0;
 	private GridPane grilleConcepteurs = null;
 	
 	public VueEditerConcepteur()  {
@@ -39,6 +37,7 @@ public class VueEditerConcepteur extends Scene {
 			@Override
 			public void handle(ActionEvent arg0) {
 				
+				controleur.notifierEnregistrerConcepteur();
 				
 			}});
 		
@@ -66,25 +65,26 @@ public class VueEditerConcepteur extends Scene {
 		panneau.getChildren().add(grilleConcepteurs);
 	}
 	
-	
+	private int idConcepteur = 0; // solution discutable
 	public void afficherConcepteur(Concepteur concepteur)
 	{
+		this.idConcepteur = concepteur.getId();
 		this.valeurNom.setText(concepteur.getNom());
 		this.valeurSurnom.setText(concepteur.getSurnom());
 		this.valeurSpecialite.setText(concepteur.getSpecialite());
 		this.valeurCourriel.setText(concepteur.getCourriel());
 	}
-	/*	
-	public Robot demanderConcepteur()
+
+	public Concepteur demanderConcepteur()
 	{
-		Robot robot = new Robot(this.valeurNom.getText(), 
-								this.valeurSurnom.getText(), 
-								this.valeurSpecialite.getText(), 
-								this.valeurCourriel.getText());
-		robot.setId(idRobot);
-		return robot;
+		Concepteur concepteur = new Concepteur();
+		concepteur.setNom(this.valeurNom.getText());
+		concepteur.setSurnom(this.valeurSurnom.getText());
+		concepteur.setSpecialite(this.valeurSpecialite.getText());
+		concepteur.setCourriel(this.valeurCourriel.getText());
+		concepteur.setId(this.idConcepteur);
+		return concepteur;
 	}
-	*/
 	
 	public void setControleur(ControleurRobot controleur) {
 		this.controleur = controleur;
