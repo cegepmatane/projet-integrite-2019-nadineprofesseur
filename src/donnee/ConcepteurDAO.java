@@ -103,4 +103,30 @@ public class ConcepteurDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public Concepteur rapporterConcepteur(int id)
+	{
+		System.out.println("ConcepteurDAO.rapporterConcepteur("+id+")");
+		Concepteur concepteur = new Concepteur();
+		
+		try {
+			
+			Statement requete = connection.createStatement();
+			ResultSet curseurConcepteurs = requete.executeQuery("SELECT * FROM concepteur WHERE id = " + id);
+			curseurConcepteurs.next();
+			String nom = curseurConcepteurs.getString("nom");
+			String surnom = curseurConcepteurs.getString("surnom");
+			String specialite = curseurConcepteurs.getString("specialite");
+			String courriel = curseurConcepteurs.getString("courriel");
+			concepteur.setId(id);
+			concepteur.setNom(nom);
+			concepteur.setSurnom(surnom);
+			concepteur.setSpecialite(specialite);
+			concepteur.setCourriel(courriel);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return concepteur;
+	}
 }

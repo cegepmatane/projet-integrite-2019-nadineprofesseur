@@ -66,16 +66,15 @@ public class VueEditerConcepteur extends Scene {
 		panneau.getChildren().add(grilleConcepteurs);
 	}
 	
-	/*
+	
 	public void afficherConcepteur(Concepteur concepteur)
 	{
-		this.idRobot = robot.getId();
-		this.valeurNom.setText(robot.getNom());
-		this.valeurSurnom.setText(robot.getCouleur());
-		this.valeurSpecialite.setText(robot.getPoids());
-		this.valeurCourriel.setText(robot.getTechnologie());
+		this.valeurNom.setText(concepteur.getNom());
+		this.valeurSurnom.setText(concepteur.getSurnom());
+		this.valeurSpecialite.setText(concepteur.getSpecialite());
+		this.valeurCourriel.setText(concepteur.getCourriel());
 	}
-		
+	/*	
 	public Robot demanderConcepteur()
 	{
 		Robot robot = new Robot(this.valeurNom.getText(), 

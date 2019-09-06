@@ -156,5 +156,9 @@ public class ControleurRobot {
 	public void notifierNaviguerEditerConcepteur(int id)
 	{
 		System.out.println("ControleurRobot.notifierNaviguerEditerConcepteur("+id+")");
+		ConcepteurDAO concepteurDAO = new ConcepteurDAO(); // todo concentrer
+		Concepteur concepteur = concepteurDAO.rapporterConcepteur(id);
+		NavigateurDesVues.getInstance().getVueEditerConcepteur().afficherConcepteur(concepteur);
+		NavigateurDesVues.getInstance().naviguerVersVueEditerConcepteur();
 	}
 }
