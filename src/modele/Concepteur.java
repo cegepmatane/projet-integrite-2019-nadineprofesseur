@@ -2,13 +2,20 @@ package modele;
 
 public class Concepteur {
 	
+	protected int id;
 	protected String nom;
 	protected String surnom;
 	protected String specialite;
 	protected String courriel;
 	protected int idRobot;
 	
-
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNom() {
 		return nom;
 	}

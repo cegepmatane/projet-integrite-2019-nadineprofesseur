@@ -109,11 +109,11 @@ public class VueEditerRobot extends Scene {
 		for(Concepteur concepteur : listeConcepteurs)
 		{
 			Button actionEditerConcepteur = new Button("Editer");
-			actionEditerConcepteur.setUserData(0);
+			actionEditerConcepteur.setUserData(concepteur.getId());
 			actionEditerConcepteur.setOnAction(evenement -> {
 				System.out.println("actionEditerConcepteur.evenement");
 				int id = (int)((Button)evenement.getSource()).getUserData();	
-				
+				this.controleur.notifierNaviguerEditerConcepteur(id);
 			});
 			
 			//System.out.println(concepteur.getNom());

@@ -50,13 +50,11 @@ public class ControleurRobot {
 		//this.navigateur.naviguerVersVueAjouterRobot();		
 		//this.vueEditerRobot.afficherListeDistinction(this.distinctionDAO.listerDistinctions());
 		//this.navigateur.naviguerVersVueAjouterConcepteur();
+		//this.navigateur.naviguerVersVueEditerConcepteur();
 
 		// VRAI CODE
 		this.navigateur.naviguerVersVueListeRobot();	
-		
-		/// TEST
-		this.navigateur.naviguerVersVueEditerConcepteur();
-		
+				
 
 	}
 	
@@ -153,5 +151,10 @@ public class ControleurRobot {
 		
 		NavigateurDesVues.getInstance().getVueEditerRobot().afficherListeConcepteurs(accesseurConcepteur.listerConcepteursParRobot(robot)); // optimiser
 		NavigateurDesVues.getInstance().naviguerVersVueEditerRobot();
+	}
+	
+	public void notifierNaviguerEditerConcepteur(int id)
+	{
+		System.out.println("ControleurRobot.notifierNaviguerEditerConcepteur("+id+")");
 	}
 }

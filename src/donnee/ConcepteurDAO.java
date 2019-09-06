@@ -65,10 +65,12 @@ public class ConcepteurDAO {
 			{
 				Concepteur concepteur = new Concepteur();
 				
+				int id = Integer.parseInt(curseurConcepteurs.getString("id"));
 				String nom = curseurConcepteurs.getString("nom");
 				String surnom = curseurConcepteurs.getString("surnom");
 				String specialite = curseurConcepteurs.getString("specialite");
 				String courriel = curseurConcepteurs.getString("courriel");
+				concepteur.setId(id);
 				concepteur.setNom(nom);
 				concepteur.setSurnom(surnom);
 				concepteur.setSpecialite(specialite);
